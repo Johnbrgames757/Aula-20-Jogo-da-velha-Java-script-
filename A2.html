@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="https://media.istockphoto.com/id/185122660/pt/foto/x-vermelho.jpg?s=612x612&w=0&k=20&c=Z38i6IBDzUpZ2f2LszkR-Rto8UDH_IZ-4GIu56BuAvU=">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da veia</title>
+</head>
+<body>
+    
+    <h1>Jogo da Velha</h1>
+
+    <audio autoplay loop>
+        <source src="Team Fortress 2 Soundtrack _ More Gun (Version 1).mp3" type="audio/mp3">
+    </audio>
+
+    <div class="board" id="board">
+        <div class="cell" onclick="cellCliked (0)"></div>
+        <div class="cell" onclick="cellCliked (1)"></div>
+        <div class="cell" onclick="cellCliked (2)"></div>
+        <div class="cell" onclick="cellCliked (3)"></div>
+        <div class="cell" onclick="cellCliked (4)"></div>
+        <div class="cell" onclick="cellCliked (5)"></div>
+        <div class="cell" onclick="cellCliked (6)"></div>
+        <div class="cell" onclick="cellCliked (7)"></div>
+        <div class="cell" onclick="cellCliked (8)"></div>
+    </div>
+
+    <script>
+        let currentPlayer = 'X';
+        let board = ['','','','','','','','',''];
+
+        function cellCliked(index) {
+            if (board[index] === ''){
+                board[index] = currentPlayer;
+                document.getElementById('board').children[index].innerHTML = currentPlayer;
+                checkWinner();
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            }
+        }
+
+        function checkWinner (){
+            const winConditions = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
+            ];
+
+            for (let condition of winConditions) {
+                const [a, b, c] = condition;
+                if (board[a] !== '' && board[a] === board[b] && board[a] === board [c]) {
+                    alert(`JOGADOR ${board[a]} VENCEU!!!`);
+                    resetBoard();
+                    return;
+                }
+            }
+
+            if (!board.includes('')) {
+                alert('EMPATE');
+                resetBoard();
+                
+            }
+        }
+
+        function resetBoard() {
+            currentPlayer = 'X';
+            board = ['', '', '', '', '', '', '', '', ''];
+            for (let i = 0; i < 9; i++) {
+                document.getElementById('board').children[i].innerText = '';
+            }
+        }
+
+    </script>
+
+    <footer>
+        <br><img src="download_1 (1).png">
+        <h2>Criado Por John iniciante em programação web</h2>
+    
+    </footer>
+</body>
+</html>

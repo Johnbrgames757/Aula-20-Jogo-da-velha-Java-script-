@@ -1,0 +1,56 @@
+@font-face {
+    font-family: isu;
+    src: url(Comixo-Regular.otf);
+}
+
+@font-face {
+    font-family:plr;
+    src: url(Universal\ Serif.ttf);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 2px;
+    justify-content:center;
+    
+}
+
+.cell {
+    border: 3px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    cursor: pointer;
+    font-family:plr;
+    background: linear-gradient(to bottom, rgb(141, 243, 110),
+    rgb(248, 159, 159));
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body{
+    align-items: center;
+    text-align: center;
+    font-family: isu;
+    font-size: 35px;
+    background: url(https://i.pinimg.com/originals/95/7b/cc/957bccfabd8a2c4092f7033a0e4ffe39.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    background: linear-gradient(to bottom, rgb(136, 74, 236),
+    rgb(235, 81, 61));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2{
+    font-size: 30px;
+}

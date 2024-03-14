@@ -1,0 +1,27 @@
+@font-face {
+    font-family:plr;
+    src: url(Universal\ Serif.ttf);
+}
+
+h1{
+    text-align: center;
+    font-family: plr;
+    color:white;
+    font-size: 30px;
+}
+
+body{
+    background:url(https://cdn.wallpapersafari.com/89/68/v8ZRoa.png)
+}
+
+li{
+    text-align: center;
+    font-size: 35px;
+    font-family: plr;
+    margin-top: 250px;
+}
+
+ li a{
+    color: white;
+    text-decoration: none;
+ }
